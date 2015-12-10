@@ -5,13 +5,12 @@ require 'pmml_consumer/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pmml_consumer"
-  spec.version       = PmmlConsumer::VERSION
-  spec.authors       = ["romain.sagean"]
-  spec.email         = ["romain.sagean@hupi.fr"]
+  spec.version       = PMMLConsumer::VERSION
+  spec.authors       = ["scauglog"]
+  spec.email         = ["scauglog@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{read a PMML file and use it to make prediction}
+  spec.homepage      = "https://github.com/hupi-analytics/pmml_consumer"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -30,4 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "pry"
+  spec.add_dependency "nokogiri", "~> 1.6"
 end
