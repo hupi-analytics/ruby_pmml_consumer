@@ -1,8 +1,6 @@
-# PmmlConsumer
+# Ruby PMML Consumer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pmml_consumer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Generate a PMML file with your favorite machine learning library and use this gem to read the file and make prediciton in a ruby application. This gem is primarily intended to work with apache spark 1.5 PMML file, so some features from the PMML standard maybe missing.
 
 ## Installation
 
@@ -22,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+pmml_string = File.open('my_pmml_file.xml', "rb").read
+predictor = PMMLConsumer.load(pmml_string)
+input = { "feature1" => 1, "feature2" => "banana"}
+puts predictor.predict(input)
+```
 
 ## Development
 
@@ -32,10 +35,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pmml_consumer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/hupi-analytics/pmml_consumer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
